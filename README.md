@@ -15,6 +15,12 @@ sudo apt install i2c-tools
 ```
 RUN CFLAGS="-fcommon" pip install RPi.GPIO
 ```
+- In order to make the script able to control _Docker_ and use it's commands, the following volumes has to be added to de `docker run` command:
+```
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v /usr/bin/docker:/usr/bin/docker \
+-v /usr/lib/libdevmapper.so.1.02:/usr/lib/libdevmapper.so.1.02 \
+```
 
 # I2C_LCD_driver_UBUNTU.py
 
